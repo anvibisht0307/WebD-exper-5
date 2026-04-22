@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Weather Widget</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background styling is handled in CSS with gradients -->
+
+    <div class="app-wrapper">
+        <div class="search-bar">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="city-input" placeholder="Search city..." autocomplete="off">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div class="loading-state" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Fetching weather...</p>
+        </div>
+
+        <div class="error-message" id="error" style="display: none;">
+            <p>Oops! We couldn't find that city.</p>
+        </div>
+
+        <div class="weather-widget" id="weather-info" style="display: none;">
+            <div class="location-header">
+                <h2 id="location-name">New York</h2>
+                <p id="current-date">Tuesday, April 14</p>
+            </div>
+
+            <div class="main-weather-display">
+                <div class="weather-icon-container" id="weather-icon-main">
+                    <!-- Main Icon SVG injected here -->
+                </div>
+                
+                <div class="temp-condition">
+                    <div class="temp-display">
+                        <h1 id="temp-value">26</h1>
+                        <span class="unit">°</span>
+                    </div>
+                </div>
+                <p class="condition-text" id="weather-code">Partly Cloudy</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                    </div>
+                    <div class="metric-data">
+                        <span class="metric-label">Wind</span>
+                        <span class="metric-value" id="wind-speed">12 km/h</span>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="metric-data">
+                        <span class="metric-label">Time</span>
+                        <span class="metric-value" id="current-time">12:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <div class="forecast-header">
+                    <h3>Today</h3>
+                    <span>24 Hours</span>
+                </div>
+                <div class="hourly-slider" id="hourly-container">
+                    <!-- Hourly items injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
